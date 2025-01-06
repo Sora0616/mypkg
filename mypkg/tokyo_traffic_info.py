@@ -17,6 +17,7 @@ class TokyoTrafficInfoPublisher(Node):
         try:
             # 交通情報APIから東京駅周辺の交通情報を取得
             response = requests.get('https://api.example.com/traffic_info?location=tokyo_station')
+            response.raise_for_status()
             data = response.json()
 
             # 交通情報をフォーマット
@@ -29,6 +30,9 @@ class TokyoTrafficInfoPublisher(Node):
             if rclpy.ok():
                 self.publisher_.publish(msg)
 
+        except requests.exceptions.RequestException as e: 
+            if rclpy.ok(): 
+                self.get_logger().error(f"HTTP error: {e}")
         except Exception as e:
             if rclpy.ok():
                 self.get_logger().error(f"Error publishing traffic info: {e}")
