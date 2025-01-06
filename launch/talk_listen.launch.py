@@ -6,17 +6,19 @@ import launch.actions
 import launch.substitutions
 import launch_ros.actions
 
-
 def generate_launch_description():
-
-    talker = launch_ros.actions.Node(
+    tokyo_traffic_info_publisher = launch_ros.actions.Node(
         package='mypkg',
-        executable='talker',
-        )
+        executable='tokyo_traffic_info',
+    )
     listener = launch_ros.actions.Node(
         package='mypkg',
         executable='listener',
         output='screen'
-        )
+    )
 
-    return launch.LaunchDescription([talker, listener])
+    return launch.LaunchDescription([
+        tokyo_traffic_info_publisher,
+        listener
+    ])
+
