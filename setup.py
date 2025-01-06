@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import find_packages, setup
 import os
 from glob import glob
 
@@ -7,7 +7,7 @@ package_name = 'mypkg'
 setup(
     name=package_name,
     version='0.0.0',
-    packages=[package_name],
+    packages=find_packages(exclude=['test']),
     data_files=[
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
@@ -18,13 +18,13 @@ setup(
     zip_safe=True,
     maintainer='Sora Hirano',
     maintainer_email='s23c1115wh@s.chibakoudai.jp',
-    description='ロボットシステム学のサンプル',
+    description='A package for monitoring system resources',
     license='BSD-3-Clause',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'talker = mypkg.talker:main',
-            'listener = mypkg.listener:main',
+            'tokyo_traffic_info = mypkg.tokyo_traffic_info:main',
         ],
     },
 )
+

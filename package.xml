@@ -3,13 +3,13 @@
 <package format="3">
   <name>mypkg</name>
   <version>0.0.0</version>
-  <description>ロボットシステム学のサンプル</description>
+  <description>リアルタイムで東京駅周辺の交通情報を配信するパッケージ</description>
   <maintainer email="s23c1115wh@s.chibakoudai.jp">Sora Hirano</maintainer>
-  <license>ament_copyright</license>
   <license>BSD-3-Clause</license>
+  <exec_depend>rclpy</exec_depend>
   <exec_depend>std_msgs</exec_depend>
+  <exec_depend>requests</exec_depend>
 
-  <exec_depend>launch_ros</exec_depend>
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>
   <test_depend>ament_pep257</test_depend>
@@ -19,3 +19,4 @@
     <build_type>ament_python</build_type>
   </export>
 </package>
+
