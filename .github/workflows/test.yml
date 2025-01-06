@@ -13,6 +13,9 @@ jobs:
           apt-get install -y python3-pip
           pip3 install requests
 
+      - name: Make test script executable
+        run: chmod +x ./src/mypkg/test/test.bash
+
       - name: build and test
         run: |
           rsync -av ./ /root/ros2_ws/src/mypkg/
