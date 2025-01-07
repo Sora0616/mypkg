@@ -16,6 +16,7 @@ class TokyoTrafficInfoListener(Node):
         self.subscription  # prevent unused variable warning
 
     def listener_callback(self, msg):
+        processed_msg = 'Processed: "%s"' % msg.data
         self.get_logger().info('Received traffic info: "%s"' % msg.data)
 
 def main(args=None):
