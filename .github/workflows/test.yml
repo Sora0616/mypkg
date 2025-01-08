@@ -31,4 +31,7 @@ jobs:
           apt-get update 
           apt-get install -y python3-pip 
           pip3 install requests beautifulsoup4    
-
+      - name: Launch ROS2
+        run: | 
+          timeout 60 ros2 launch mypkg talk_listen.launch.py > /tmp/mypkg.log 
+          cat /tmp/mypkg.log | grep 'mypkg/tokyo_station_delay_info:'
