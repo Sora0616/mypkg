@@ -26,5 +26,7 @@ setup(
             'tokyo_station_delay_info = mypkg.tokyo_station_delay_info:main',
         ],
     },
+    install_scripts=['scripts'],
+    script_dir='scripts'
 )
 
