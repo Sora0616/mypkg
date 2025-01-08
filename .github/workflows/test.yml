@@ -15,7 +15,8 @@ jobs:
 
       - name: Set environment variables 
         run: | 
-          export AMENT_CURRENT_PREFIX=/opt/ros/humble
+          export AMENT_CURRENT_PREFIX=/opt/ros/foxy
+          export COLCON_PYTHON_EXECUTABLE=/usr/bin/python3
 
       - name: build and test
         run: |
