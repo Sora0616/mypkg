@@ -10,7 +10,7 @@ from bs4 import BeautifulSoup
 class TokyoStationDelayInfoPublisher(Node):
     def __init__(self):
         super().__init__('tokyo_station_delay_info_publisher')
-        self.publisher_ = self.create_publisher(String, 'traffic', 10)
+        self.publisher_ = self.create_publisher(String, 'delay', 10)
         self.create_timer(5.0, self.publish_delay_info)
 
     def publish_delay_info(self):
