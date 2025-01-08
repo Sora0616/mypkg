@@ -24,7 +24,6 @@ setup(
     entry_points={
         'console_scripts': [
             'tokyo_traffic_info = mypkg.tokyo_traffic_info:main',
-            'listener = mypkg.listener:main',
         ],
     },
 )
