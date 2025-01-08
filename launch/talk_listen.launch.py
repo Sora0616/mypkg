@@ -3,7 +3,6 @@
 
 import launch
 import launch.actions
-import launch.substitutions
 import launch_ros.actions
 
 def generate_launch_description():
@@ -11,14 +10,8 @@ def generate_launch_description():
         package='mypkg',
         executable='tokyo_traffic_info',
     )
-    listener = launch_ros.actions.Node(
-        package='mypkg',
-        executable='listener',
-        output='screen'
-    )
 
     return launch.LaunchDescription([
-        tokyo_traffic_info_publisher,
-        listener
+        tokyo_traffic_info_publisher
     ])
 
