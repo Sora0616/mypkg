@@ -17,6 +17,8 @@ jobs:
         run: | 
           export AMENT_CURRENT_PREFIX=/opt/ros/foxy
           export COLCON_PYTHON_EXECUTABLE=/usr/bin/python3
+          echo "Python executable: $_colcon_python_executable" 
+          set -x
 
       - name: build and test
         run: |
