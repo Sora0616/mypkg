@@ -13,6 +13,10 @@ jobs:
           apt-get install -y python3-pip
           pip3 install requests
 
+      - name: Set environment variables 
+        run: | 
+          export AMENT_CURRENT_PREFIX=/opt/ros/humble
+
       - name: build and test
         run: |
           rsync -av ./ /root/ros2_ws/src/mypkg/
