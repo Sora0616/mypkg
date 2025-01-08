@@ -6,12 +6,12 @@ import launch.actions
 import launch_ros.actions
 
 def generate_launch_description():
-    tokyo_traffic_info_publisher = launch_ros.actions.Node(
+    tokyo_station_delay_info_publisher = launch_ros.actions.Node(
         package='mypkg',
-        executable='tokyo_traffic_info',
+        executable='tokyo_station_delay_info',
     )
 
     return launch.LaunchDescription([
-        tokyo_traffic_info_publisher
+        tokyo_station_delay_info_publisher
     ])
 

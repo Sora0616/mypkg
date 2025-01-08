@@ -3,7 +3,7 @@
 <package format="3">
   <name>mypkg</name>
   <version>0.0.0</version>
-  <description>リアルタイムで東京駅周辺の交通情報を配信するパッケージ</description>
+  <description>東京駅の遅延情報を配信するパッケージ</description>
   <maintainer email="s23c1115wh@s.chibakoudai.jp">Sora Hirano</maintainer>
   <license>BSD-3-Clause</license>
   <exec_depend>rclpy</exec_depend>

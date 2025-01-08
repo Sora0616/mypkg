@@ -11,4 +11,4 @@ source $dir/.bashrc
 timeout 20 ros2 launch mypkg talk_listen.launch.py > /tmp/mypkg.log
 
 cat /tmp/mypkg.log |
-grep 'mypkg/tokyo_traffic_info:'
+grep 'mypkg/tokyo_station_delay_info:'

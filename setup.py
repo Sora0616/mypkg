@@ -18,12 +18,12 @@ setup(
     zip_safe=True,
     maintainer='Sora Hirano',
     maintainer_email='s23c1115wh@s.chibakoudai.jp',
-    description='A package for monitoring system resources',
+    description='Tokyo Station Delay Info Publisher',
     license='BSD-3-Clause',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'tokyo_traffic_info = mypkg.tokyo_traffic_info:main',
+            'tokyo_station_delay_info = mypkg.tokyo_station_delay_info:main',
         ],
     },
 )
