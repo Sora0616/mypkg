@@ -6,32 +6,8 @@ jobs:
     container: ryuichiueda/ubuntu22.04-ros2:latest
     steps:
       - uses: actions/checkout@v2
-
-      - name: Install pip and requests
-        run: |
-          apt-get update
-          apt-get install -y python3-pip
-          pip3 install requests
-
-      - name: Set environment variables 
-        run: | 
-          export AMENT_CURRENT_PREFIX=/opt/ros/foxy
-          export COLCON_PYTHON_EXECUTABLE=/usr/bin/python3
-          echo "Python executable: $_colcon_python_executable" 
-          set -x
-
       - name: build and test
         run: |
           rsync -av ./ /root/ros2_ws/src/mypkg/
           cd /root/ros2_ws
           bash -xv ./src/mypkg/test/test.bash /root
-
-      - name: Install dependencies 
-        run: | 
-          apt-get update 
-          apt-get install -y python3-pip 
-          pip3 install requests beautifulsoup4    
-      - name: Launch ROS2
-        run: | 
-          timeout 60 ros2 launch mypkg talk_listen.launch.py > /tmp/mypkg.log 
-          cat /tmp/mypkg.log | grep 'mypkg/tokyo_station_delay_info:'
