@@ -3,12 +3,14 @@
 <package format="3">
   <name>mypkg</name>
   <version>0.0.0</version>
-  <description>外房線の駅</description>
+  <description>a package for practice</description>
   <maintainer email="s23c1115wh@s.chibakoudai.jp">Sora Hirano</maintainer>
   <license>BSD-3-Clause</license>
+
   <exec_depend>rclpy</exec_depend>
   <exec_depend>std_msgs</exec_depend>
   <exec_depend>launch_ros</exec_depend>
+
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>
   <test_depend>ament_pep257</test_depend>
