@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: 2025 Sora Hirano
 # SPDX-License-Identifier: BSD-3-Clause
 
 import rclpy
