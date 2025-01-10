@@ -1,17 +1,13 @@
-# SPDX-FileCopyrightText: 2025 Sora Hirano <s23c1115wh@s.chibakoudai.jp>
-# SPDX-License-Identifier: BSD-3-Clause
-
-import launch
-import launch.actions
-import launch_ros.actions
+from launch import LaunchDescription
+from launch_ros.actions import Node
 
 def generate_launch_description():
-    tokyo_station_delay_info_publisher = launch_ros.actions.Node(
-        package='mypkg',
-        executable='tokyo_station_delay_info',
-    )
-
-    return launch.LaunchDescription([
-        tokyo_station_delay_info_publisher
+    return LaunchDescription([
+        Node(
+            package='mypkg',
+            executable='station_publisher',
+            name='station_publisher',
+            output='screen',
+        ),
     ])
 
