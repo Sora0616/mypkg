@@ -50,10 +50,10 @@ data: 上総一ノ宮
 ## 注意点
 talk_listen.launch.pyはテスト用。
 
-## 必要なソフトウェア
-- python
+## 動作環境
+このパッケージは以下の環境で動作確認済み
+
 - ROS 2 humble
-## テスト済み環境
 - Ubuntu 22.04 LTS
    
 ## ライセンス

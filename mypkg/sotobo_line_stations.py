@@ -7,7 +7,7 @@ from std_msgs.msg import String
 
 class StationPublisher(Node):
     def __init__(self):
-        super().__init__('station_publisher')
+        super().__init__('sotobo_station_publisher')
         self.publisher_ = self.create_publisher(String, 'stations', 10)
         timer_period = 1  # タイマーの周期を1秒に設定
         self.timer = self.create_timer(timer_period, self.timer_callback)
@@ -31,14 +31,14 @@ class StationPublisher(Node):
 
 def main(args=None):
     rclpy.init(args=args)
-    station_publisher = StationPublisher()
+    sotobo_station_publisher = StationPublisher()
     try:
-        rclpy.spin(station_publisher)  # ノードをスピン
+        rclpy.spin(sotobo_station_publisher)  # ノードをスピン
     except KeyboardInterrupt:
         pass
     finally:
         if rclpy.ok():
-            station_publisher.destroy_node()  # ノードを破棄
+            sotobo_station_publisher.destroy_node()  # ノードを破棄
             rclpy.shutdown()  # rclpyをシャットダウン
 
 if __name__ == '__main__':

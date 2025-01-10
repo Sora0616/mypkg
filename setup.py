@@ -26,7 +26,7 @@ setup(
 
     entry_points={
         'console_scripts': [
-            'station_publisher = mypkg.sotobo_line_stations:main',
+            'sotobo_station_publisher = mypkg.sotobo_line_stations:main',
         ],
     },
 )
