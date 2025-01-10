@@ -8,7 +8,7 @@ dir=~
 cd $dir/ros2_ws
 colcon build
 source $dir/.bashrc
-source /opt/ros/foxy/setup.bash  # ここで正しいパスを確認
+source /opt/ros/humble/setup.bash  # ここで正しいパスを確認
 
 # ノードを直接起動
 timeout 60 ros2 launch mypkg talk_listen.launch.py > /tmp/mypkg.log
