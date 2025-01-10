@@ -1,8 +1,12 @@
 # 外房線駅名ノード
 [![test](https://github.com/Sora0616/mypkg/actions/workflows/test.yml/badge.svg)](https://github.com/Sora0616/mypkg/actions/workflows/test.yml)
 
-## 概要
-- ROS2のパッケージ
+
+## ノードの概要
+
+### `sotobo_station_publisher` ノード
+
+- トピック名: `stations`
 
 - 外房線の駅名を毎秒トピックにパブリッシュする。
 
@@ -11,7 +15,7 @@
 
 端末1
 ```
-ros2 run mypkg station_publisher
+ros2 run mypkg sotobo_station_publisher
 ```
 端末2
 ```
