@@ -6,7 +6,7 @@ package_name = 'mypkg'
 
 setup(
     name=package_name,
-    version='0.0.0',
+    version='0.0.1',
     packages=[package_name],
 
     data_files=[
@@ -26,7 +26,7 @@ setup(
 
     entry_points={
         'console_scripts': [
-            'sotobo_station_publisher = mypkg.sotobo_line_stations:main',
+            'chiba_weather_info = mypkg.chiba_weather_info:main',
         ],
     },
 )
