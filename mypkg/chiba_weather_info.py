@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2025 Kazuki Makino
+# SPDX-FileCopyrightText: 2025 Sora Hirano <s23c1115wh@s.chibakoudai.jp>
 # SPDX-License-Identifier:BSD-3-Clause
 
 import requests
