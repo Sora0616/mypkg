@@ -1,25 +1,25 @@
-#!/bin/bash
-# SPDX-FileCopyrightText: 2025 Sora Hirano
-# SPDX-License-Identifier: BSD-3-Clause
+#!/bin/bash -xv
+# SPDX-FileCopyrightText: 2025 Sora Hirano <s23c1115wh@s.chibakoudai.jp>
+# SPDX-License-Identifier:BSD-3-Clause
 
 dir=~
 [ "$1" != "" ] && dir="$1"
 
+sudo apt -y install python3-pip
+pip3 install requests
+
 cd $dir/ros2_ws
 colcon build
 source $dir/.bashrc
-source /opt/ros/humble/setup.bash  # ここで正しいパスを確認
+source install/setup.bash && source install/local_setup.bash
 
-# ノードを直接起動
-timeout 60 ros2 launch mypkg talk_listen.launch.py > /tmp/mypkg.log
+# 新しいノードの起動とログの確認
+timeout 45 ros2 launch mypkg talk_listen.launch.py &> /tmp/mypkg.log
 
-# ログファイルの内容を確認
-cat /tmp/mypkg.log | grep -E '千葉|安房鴨川'
+# ログを表示
+cat /tmp/mypkg.log
 
-# 結果の表示
-if grep -q "千葉" /tmp/mypkg.log && grep -q "安房鴨川" /tmp/mypkg.log; then
-  echo "トピック stations に正しいデータが発信されています。成功です。"
-else
-  echo "トピック stations に正しいデータが発信されていません。エラーです。"
-fi
+# ログから千葉市の天気情報を抽出
+cat /tmp/mypkg.log |
+grep '千葉市の天気は'
 
