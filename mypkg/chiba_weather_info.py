@@ -50,10 +50,10 @@ def get_weather(next_day):
         min_temp = data_json["forecasts"][2]["temperature"]["min"]["celsius"] or "不明"
         chance_of_rain = data_json["forecasts"][2]["chanceOfRain"]
 
-    chance_of_rain_str = (f"0時から6時までの降水確率は{chance_of_rain.get('T00_06', '不明')}%、"
-                          f"6時から12時までの降水確率は{chance_of_rain.get('T06_12', '不明')}%、"
-                          f"12時から18時までの降水確率は{chance_of_rain.get('T12_18', '不明')}%、"
-                          f"18時から24時までの降水確率は{chance_of_rain.get('T18_24', '不明')}%です。")
+    chance_of_rain_str = (f"0時から6時までの降水確率は{chance_of_rain.get('T00_06', '不明')}、"
+                          f"6時から12時までの降水確率は{chance_of_rain.get('T06_12', '不明')}、"
+                          f"12時から18時までの降水確率は{chance_of_rain.get('T12_18', '不明')}、"
+                          f"18時から24時までの降水確率は{chance_of_rain.get('T18_24', '不明')}です。")
 
     results = (f"{date}、{city}の天気は{weather}です。\n"
                f"最高気温は{max_temp}度、最低気温は{min_temp}度です。\n"
