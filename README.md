@@ -48,8 +48,8 @@ data: '2025年01月22日、千葉市の天気は晴時々曇です。
 ```
 
 ## 注意点
-listener.pyはテスト用。
-talk_listen.launch.pyはノードを立ち上げるためのコード。
+- listener.pyはテスト用。
+- talk_listen.launch.pyはノードを立ち上げるためのコード。
 
 ## 動作環境
 このパッケージは以下の環境で動作確認済み
