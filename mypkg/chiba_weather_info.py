@@ -28,8 +28,12 @@ def main():
 
 def get_weather(next_day):
     url = "https://weather.tsukumijima.net/api/forecast?city=120010"  
-    response = requests.get(url)
-    response.raise_for_status()
+    try:
+        response = requests.get(url, timeout=10)
+        response.raise_for_status()
+    except requests.exceptions.RequestException as e:
+        print(f"天気情報の取得中にエラーが発生しました: {e}")
+        return None
 
     data_json = response.json()
 
